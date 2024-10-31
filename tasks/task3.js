@@ -9,7 +9,12 @@
 "Для заокруглення числа можна до десятих використовуйте .toFixed(1)"
 
 function addSuccessPercent(olympicRepresentation) {
-  // Ваш код
+ let newOlympicRepresentation = olympicRepresentation.map((object)=>{
+  let result = (object.medals/object.athletes*100).toFixed(1);
+  object.percentOfSuccess= isNaN(result)? 0+"%":result+"%";
+  return object;
+})
+return newOlympicRepresentation;
 }
 
 const olympicRepresentation = [
